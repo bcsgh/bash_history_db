@@ -51,7 +51,7 @@ git_repository(
 #############################################
 git_repository(
     name = "bazel_rules",
-    commit = "7bedda9b65feaa1efab8d9cd77c4c1a8b667b042",  # current as of 2021/02/17
-    shallow_since = "1606611670 -0800",
+    commit = "2575095aa022c9707bcab3a91de617aca0896ec7",  # current as of 2021/04/01
+    shallow_since = "1617318488 -0700",
     remote = "git://github.com/bcsgh/bazel_rules.git",
 )
