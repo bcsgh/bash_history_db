@@ -29,8 +29,8 @@ load("@bazel_rules//cc_embed_data:cc_embed_data.bzl", "cc_embed_data")
 
 cc_library(
     name = "sqlite_handle",
-    hdrs = ["sqlite_handle.h"],
     srcs = ["sqlite_handle.cc"],
+    hdrs = ["sqlite_handle.h"],
     deps = [
         "@com_github_glog_glog//:glog",
         "@sqlite//:sqlite_lib",
@@ -57,8 +57,8 @@ cc_embed_data(
 
 cc_library(
     name = "db",
-    hdrs = ["db.h"],
     srcs = ["db.cc"],
+    hdrs = ["db.h"],
     deps = [
         ":sql",
         ":sqlite_handle",
@@ -70,8 +70,8 @@ cc_library(
 
 cc_test(
     name = "basic_test",
+    timeout = "short",
     srcs = ["basic_test.cc"],
-    timeout="short",
     deps = [
         ":db",
         ":sqlite_handle",
