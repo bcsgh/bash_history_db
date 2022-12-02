@@ -33,12 +33,13 @@
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h"
 #include "absl/flags/usage.h"
+#include "absl/log/check.h"
+#include "absl/log/initialize.h"
 #include "absl/strings/str_join.h"
 #include "absl/time/clock.h"
 #include "absl/time/time.h"
 #include "cli/db.h"
 #include "cli/sqlite_handle.h"
-#include "glog/logging.h"
 
 namespace {
 
@@ -129,7 +130,7 @@ int main(int argc, char** argv) {
   absl::SetProgramUsageMessage(kMsg);
 
   auto args = absl::ParseCommandLine(argc, argv);
-  google::InitGoogleLogging(args[0]);
+  absl::InitializeLog();
 
   if (absl::GetFlag(FLAGS_create)) {
     auto path = DbPath();

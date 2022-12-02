@@ -32,7 +32,7 @@ cc_library(
     srcs = ["sqlite_handle.cc"],
     hdrs = ["sqlite_handle.h"],
     deps = [
-        "@com_github_glog_glog//:glog",
+        "@com_google_absl//absl/log:log",
         "@sqlite//:sqlite_lib",
     ],
 )
@@ -41,9 +41,10 @@ cc_library(
     name = "test_main",
     srcs = ["test_main.cc"],
     deps = [
-        "@com_github_glog_glog//:glog",
         "@com_google_absl//absl/flags:flag",
         "@com_google_absl//absl/flags:parse",
+        "@com_google_absl//absl/log:initialize",
+        "@com_google_absl//absl/log:log",
         "@com_google_absl//absl/time",
         "@com_google_googletest//:gtest",
     ],
@@ -62,7 +63,7 @@ cc_library(
     deps = [
         ":sql",
         ":sqlite_handle",
-        "@com_github_glog_glog//:glog",
+        "@com_google_absl//absl/log:log",
         "@com_google_absl//absl/time",
         "@sqlite//:sqlite_lib",
     ],
@@ -76,7 +77,7 @@ cc_test(
         ":db",
         ":sqlite_handle",
         ":test_main",
-        "@com_github_glog_glog//:glog",
+        "@com_google_absl//absl/log:log",
         "@com_google_googletest//:gtest",
     ],
 )
@@ -87,9 +88,10 @@ cc_binary(
     deps = [
         ":db",
         ":sqlite_handle",
-        "@com_github_glog_glog//:glog",
         "@com_google_absl//absl/flags:flag",
         "@com_google_absl//absl/flags:parse",
+        "@com_google_absl//absl/log:initialize",
+        "@com_google_absl//absl/log:check",
         "@com_google_absl//absl/strings",
         "@com_google_absl//absl/time",
     ],

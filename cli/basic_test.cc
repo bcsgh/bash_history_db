@@ -28,9 +28,9 @@
 #include <cstdlib>
 #include <string>
 
+#include "absl/log/log.h"
 #include "cli/db.h"
 #include "cli/sqlite_handle.h"
-#include "glog/logging.h"
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 #include "sqlite3.h"

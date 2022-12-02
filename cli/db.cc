@@ -30,10 +30,10 @@
 #include <memory>
 #include <string>
 
+#include "absl/log/log.h"
 #include "absl/time/clock.h"
 #include "absl/time/time.h"
 #include "cli/sql_emebed_data.h"
-#include "glog/logging.h"
 #include "sqlite3.h"
 
 namespace bash_history_db {
