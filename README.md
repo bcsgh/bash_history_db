@@ -15,3 +15,6 @@ To install:
 
 This will create a SQLite db at `~/.history.sqlite3`.
 If you want to place it somewher else, that can be configured via `$HISTORYDB`.
+
+## Setup (for development)
+To configure the git hooks, run `./.git_hooks/setup.sh`
