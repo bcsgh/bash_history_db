@@ -3,14 +3,6 @@ workspace(name = "bash_history_db")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-#############################################
-# Bazel Skylib.
-http_archive(
-    name = "bazel_skylib",
-    urls = ["https://github.com/bazelbuild/bazel-skylib/releases/download/1.2.1/bazel-skylib-1.2.1.tar.gz"],
-    sha256 = "f7be3474d42aae265405a592bb7da8e171919d74c16f082a5457840f06054728",
-)
-
 # Note:
 # local_repository(name = "...", path = "/home/...")
 
@@ -42,12 +34,15 @@ git_repository(
 #############################################
 git_repository(
     name = "bazel_rules",
-    commit = "19c3dc86fd46d68f13fdb51717ff871e32e5447a",  # current as of 2022/12/27
+    commit = "8e3e79e7555ab797ceef2918d1fcdaffdacac6dc",  # current as of 2023/01/02
     remote = "https://github.com/bcsgh/bazel_rules.git",
-    shallow_since = "1672162894 -0800",
+    shallow_since = "1672689339 -0800",
 )
 
+#############################################
+
+load("@bazel_rules//cc_embed_data:cc_embed_data_deps.bzl", cc_embed_data_deps = "get_deps")
 load("@bazel_rules//repositories:repositories.bzl", "jsoncpp")
 
-#############################################
 jsoncpp()
+cc_embed_data_deps()
