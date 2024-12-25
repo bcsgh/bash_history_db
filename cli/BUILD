@@ -25,7 +25,7 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-load("@bazel_rules//cc_embed_data:cc_embed_data.bzl", "cc_embed_data")
+load("@com_github_bcsgh_cc_embed_data//cc_embed_data:cc_embed_data.bzl", "cc_embed_data")
 
 cc_library(
     name = "sqlite_handle",
@@ -33,7 +33,7 @@ cc_library(
     hdrs = ["sqlite_handle.h"],
     deps = [
         "@com_google_absl//absl/log:log",
-        "@sqlite//:sqlite_lib",
+        "@sqlite3//:sqlite3",
     ],
 )
 
@@ -65,7 +65,7 @@ cc_library(
         ":sqlite_handle",
         "@com_google_absl//absl/log:log",
         "@com_google_absl//absl/time",
-        "@sqlite//:sqlite_lib",
+        "@sqlite3//:sqlite3",
     ],
 )
 
