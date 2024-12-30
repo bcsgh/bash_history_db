@@ -3,7 +3,6 @@ module(name = "bash_history_db")
 bazel_dep(
     name = "abseil-cpp",
     version = "20240722.0.bcr.2",
-    repo_name = "com_google_absl",
 )
 
 bazel_dep(
@@ -14,7 +13,6 @@ bazel_dep(
 bazel_dep(
     name = "googletest",
     version = "1.15.2",
-    repo_name = "com_google_googletest",
 )
 
 bazel_dep(

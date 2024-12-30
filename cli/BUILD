@@ -32,7 +32,7 @@ cc_library(
     srcs = ["sqlite_handle.cc"],
     hdrs = ["sqlite_handle.h"],
     deps = [
-        "@com_google_absl//absl/log:log",
+        "@abseil-cpp//absl/log:log",
         "@sqlite3//:sqlite3",
     ],
 )
@@ -41,12 +41,12 @@ cc_library(
     name = "test_main",
     srcs = ["test_main.cc"],
     deps = [
-        "@com_google_absl//absl/flags:flag",
-        "@com_google_absl//absl/flags:parse",
-        "@com_google_absl//absl/log:initialize",
-        "@com_google_absl//absl/log:log",
-        "@com_google_absl//absl/time",
-        "@com_google_googletest//:gtest",
+        "@abseil-cpp//absl/flags:flag",
+        "@abseil-cpp//absl/flags:parse",
+        "@abseil-cpp//absl/log:initialize",
+        "@abseil-cpp//absl/log:log",
+        "@abseil-cpp//absl/time",
+        "@googletest//:gtest",
     ],
 )
 
@@ -63,8 +63,8 @@ cc_library(
     deps = [
         ":sql",
         ":sqlite_handle",
-        "@com_google_absl//absl/log:log",
-        "@com_google_absl//absl/time",
+        "@abseil-cpp//absl/log:log",
+        "@abseil-cpp//absl/time",
         "@sqlite3//:sqlite3",
     ],
 )
@@ -77,8 +77,8 @@ cc_test(
         ":db",
         ":sqlite_handle",
         ":test_main",
-        "@com_google_absl//absl/log:log",
-        "@com_google_googletest//:gtest",
+        "@abseil-cpp//absl/log:log",
+        "@googletest//:gtest",
     ],
 )
 
@@ -88,11 +88,11 @@ cc_binary(
     deps = [
         ":db",
         ":sqlite_handle",
-        "@com_google_absl//absl/flags:flag",
-        "@com_google_absl//absl/flags:parse",
-        "@com_google_absl//absl/log:initialize",
-        "@com_google_absl//absl/log:check",
-        "@com_google_absl//absl/strings",
-        "@com_google_absl//absl/time",
+        "@abseil-cpp//absl/flags:flag",
+        "@abseil-cpp//absl/flags:parse",
+        "@abseil-cpp//absl/log:initialize",
+        "@abseil-cpp//absl/log:check",
+        "@abseil-cpp//absl/strings",
+        "@abseil-cpp//absl/time",
     ],
 )
