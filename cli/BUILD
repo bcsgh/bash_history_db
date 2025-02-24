@@ -33,7 +33,7 @@ cc_library(
     hdrs = ["sqlite_handle.h"],
     deps = [
         "@abseil-cpp//absl/log:log",
-        "@sqlite3//:sqlite3",
+        "@sqlite3",
     ],
 )
 
@@ -65,7 +65,7 @@ cc_library(
         ":sqlite_handle",
         "@abseil-cpp//absl/log:log",
         "@abseil-cpp//absl/time",
-        "@sqlite3//:sqlite3",
+        "@sqlite3",
     ],
 )
 
@@ -90,8 +90,8 @@ cc_binary(
         ":sqlite_handle",
         "@abseil-cpp//absl/flags:flag",
         "@abseil-cpp//absl/flags:parse",
-        "@abseil-cpp//absl/log:initialize",
         "@abseil-cpp//absl/log:check",
+        "@abseil-cpp//absl/log:initialize",
         "@abseil-cpp//absl/strings",
         "@abseil-cpp//absl/time",
     ],
