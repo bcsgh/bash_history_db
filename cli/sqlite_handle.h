@@ -25,6 +25,9 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+#ifndef CLI_SQLITE_HANDLE_H_
+#define CLI_SQLITE_HANDLE_H_
+
 #include <string>
 
 #include "sqlite3.h"
@@ -53,3 +56,5 @@ class SqlietHandle {
 };
 
 }  // namespace bash_history_db
+
+#endif  // CLI_SQLITE_HANDLE_H_
