@@ -7,7 +7,7 @@ bazel_dep(
 
 bazel_dep(
     name = "com_github_bcsgh_cc_embed_data",
-    version = "0.0.1",
+    version = "0.0.3",
 )
 
 bazel_dep(
