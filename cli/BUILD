@@ -37,19 +37,6 @@ cc_library(
     ],
 )
 
-cc_library(
-    name = "test_main",
-    srcs = ["test_main.cc"],
-    deps = [
-        "@abseil-cpp//absl/flags:flag",
-        "@abseil-cpp//absl/flags:parse",
-        "@abseil-cpp//absl/log:initialize",
-        "@abseil-cpp//absl/log:log",
-        "@abseil-cpp//absl/time",
-        "@googletest//:gtest",
-    ],
-)
-
 cc_embed_data(
     name = "sql",
     srcs = glob(["*.sql"]),
@@ -76,7 +63,7 @@ cc_test(
     deps = [
         ":db",
         ":sqlite_handle",
-        ":test_main",
+        "@com_github_bcsgh_test_base//test_base:test_main",
         "@abseil-cpp//absl/log:log",
         "@googletest//:gtest",
     ],
